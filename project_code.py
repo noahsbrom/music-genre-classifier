@@ -16,26 +16,22 @@ def main():
     data_dir = "Data/genres_original"
     wav_files, labels = organize_data(data_dir)
     spec_dir = "spectrograms/"
-    #generate_spectrograms(spec_dir, wav_files)
-    
+    generate_spectrograms(spec_dir, wav_files)
 
     # loudness variant spectrograms
     loudness_wav_files, labels_loud = augment_data_loud(wav_files, labels)
     spec_dir_loud = "spectrograms_loudness/"
-    #generate_spectrograms(spec_dir_loud, loudness_wav_files)
+    generate_spectrograms(spec_dir_loud, loudness_wav_files)
 
     # pitch variant spectrograms
     pitch_wav_files, labels_pitch = augment_data_pitch(wav_files, labels)
     spec_dir_pitch = "spectrograms_pitch/"
-    #generate_spectrograms(spec_dir_pitch, pitch_wav_files)
+    generate_spectrograms(spec_dir_pitch, pitch_wav_files)
 
     # noise variant spectrograms
     spec_dir_noise = "spectrograms_noisy/"
-    # generate_specs_noise(spec_dir_noise, wav_files)
+    generate_specs_noise(spec_dir_noise, wav_files)
     labels_noise = np.array([[i]*2 for i in labels]).flatten()
-
-
-
 
     # run trials
     run_trial(spec_dir, labels)
@@ -67,13 +63,6 @@ def generate_specs_noise(directory, wav_files):
         new_filename = directory + f"spec{new_index}.png"
         noisy_spec_image.save(new_filename)
     
-
-
-
-
-
-
-
 def augment_data_loud(wav_files, labels):
     loudness_dir = "Data/loudness_wavs/"
     loudness_wav_files = []
@@ -233,7 +222,4 @@ def generate_images(paths):
     return np.array(images)
 
 main()
-
-
-
 
