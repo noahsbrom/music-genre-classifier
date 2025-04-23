@@ -2,7 +2,8 @@
 I implemented a music genre classifer using a convolution neural network (CNN). I used the GTZAN
 dataset, a popular music genre dataset that includes 1000 songs across 10 different
 genres: blues, classical, country, disco, hip-hop, jazz, metal, pop, reggae, and rock.
-I attained a maximum accuracy of <ins>0.798</ins>. 
+I attained a maximum accuracy of <ins>0.798</ins>, a <ins>28.71% increase</ins> from the accuracy
+using the orignial dataset. 
 
 ** Note: data files were excluded from the repo because they were too large **
 
